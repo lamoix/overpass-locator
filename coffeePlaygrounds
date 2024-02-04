@@ -1,0 +1,22 @@
+
+{{geocodeArea:Evanston}}->.searchArea;
+// gather results
+nw[amenity=cafe](area.searchArea)->.one;
+nw(around.one:100)[amenity=ice_cream]->.two;
+nw(around.one:100)[cuisine=ice_cream]->.three;
+nw(around.one:100)[leisure=playground]->.four;
+(.one; .two; .three; .four;);
+
+// print results
+out geom;
+
+{{style:
+  node { fill-color: red; color: red; fill-opacity: .5;}
+
+  node[amenity=ice_cream] { fill-color: blue; color: blue, fill-opacity .5;}
+
+  node[cuisine=ice_cream] { fill-color: green; color: blue, fill-opacity .5;}
+
+  node[leisure=playground] { fill-color: blue; color: blue, fill-opacity .5;}
+
+}}
