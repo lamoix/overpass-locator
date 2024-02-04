@@ -1,13 +1,13 @@
 
 {{geocodeArea:Evanston}}->.searchArea;
-// gather results
+// find 
 nw[amenity=cafe](area.searchArea)->.one;
 nw(around.one:100)[amenity=bicycle_parking]->.two;
 nw(around.one:100)[amenity=ice_cream]->.three;
 nw(around.one:100)[leisure=playground]->.four;
 (.one; .two; .three; .four;);
 
-// print results
+// print 
 out geom;
 
 {{style:
